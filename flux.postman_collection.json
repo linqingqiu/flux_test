@@ -15,6 +15,20 @@
 							"pm.test(\"Verify login success\", function(){",
 							"    pm.response.to.have.status(200);",
 							"});",
+							"const text = pm.response.text();",
+							"var start = text.indexOf(\"e(\");",
+							"var end = text.lastIndexOf(\"%3d\");",
+							"var redirectUrl = text.substring(start+3, end+3)",
+							"// Use the jQuery selector API to get different elements on the page",
+							"// console.log(start); // get title",
+							"// console.log(end); // get URL to careers page",
+							"// console.log(redirectUrl)",
+							"",
+							"pm.sendRequest(redirectUrl, function (err, response) {",
+							"        pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
 							""
 						],
 						"type": "text/javascript"
@@ -101,6 +115,94 @@
 					"path": [
 						"Members",
 						"SecureLogin.aspx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.tmsandbox.co.nz/Members/Login.aspx?url=&secure=&login_attempts=0&quick_register=&firstname=&email=flux_test_015%2540test.test&auto_login=&err=4&login_success=False&dbs_id=&region_id=&shareOfVoice=&api_confirm=&bid=&delay_login=0&adParams=g%3d%",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.tmsandbox.co.nz/Members/Login.aspx?url=&secure=&login_attempts=0&quick_register=&firstname=&email=flux_test_015%2540test.test&auto_login=&err=4&login_success=False&dbs_id=&region_id=&shareOfVoice=&api_confirm=&bid=&delay_login=0&adParams=g%3d%26bd%3d0%26sb%3d%26pc%3d%26dpid%3d0%26hash%3d%26mat%3d",
+					"protocol": "https",
+					"host": [
+						"www",
+						"tmsandbox",
+						"co",
+						"nz"
+					],
+					"path": [
+						"Members",
+						"Login.aspx"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": ""
+						},
+						{
+							"key": "secure",
+							"value": ""
+						},
+						{
+							"key": "login_attempts",
+							"value": "0"
+						},
+						{
+							"key": "quick_register",
+							"value": ""
+						},
+						{
+							"key": "firstname",
+							"value": ""
+						},
+						{
+							"key": "email",
+							"value": "flux_test_015%2540test.test"
+						},
+						{
+							"key": "auto_login",
+							"value": ""
+						},
+						{
+							"key": "err",
+							"value": "4"
+						},
+						{
+							"key": "login_success",
+							"value": "False"
+						},
+						{
+							"key": "dbs_id",
+							"value": ""
+						},
+						{
+							"key": "region_id",
+							"value": ""
+						},
+						{
+							"key": "shareOfVoice",
+							"value": ""
+						},
+						{
+							"key": "api_confirm",
+							"value": ""
+						},
+						{
+							"key": "bid",
+							"value": ""
+						},
+						{
+							"key": "delay_login",
+							"value": "0"
+						},
+						{
+							"key": "adParams",
+							"value": "g%3d%26bd%3d0%26sb%3d%26pc%3d%26dpid%3d0%26hash%3d%26mat%3d"
+						}
 					]
 				}
 			},

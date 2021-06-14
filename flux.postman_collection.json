@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "923d1b8e-a3ab-4a14-bcf6-8832f5dbca43",
+		"name": "flux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://www.tmsandbox.co.nz/Members/SecureLogin.aspx",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify login success\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Referer",
+						"value": "https://www.tmsandbox.co.nz/Members/Login.aspx?prompt=login",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9,zh-CN;q=0.8,zh-HK;q=0.7,zh;q=0.6",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "jsValidationToken=28945a65-1448-46b3-bc71-676b68e8f6ba; click%5Fdate%5Flt=2021-6-13+22%3a26; click%5Ffrom%5Flt=https%3a%2f%2fwww.tmsandbox.co.nz%2f; _gcl_au=1.1.502765028.1623579971; _gid=GA1.3.1051558901.1623579971; trademe%5Fcookie=66d1e2f0-89f0-4e1c-aa25-18f949353a53; abtestbutton=1; validationToken=dcc8c480-cdc4-4bff-9db7-51f8328b69af; member%5Fname=Test15; login%5Fmember%5Fid=4007568; user%5Fhome%5Fregion=12; user%5Fregion=Current=100; user%5Fap=g=D&bd=622984608000000000&sb=66&pc=5371&dpid=0&hash=568a860c-4a41-4077-bf10-aef2115a3dc0&mat=; SOV=2; HomepageMegastripeTileIndex=1; _mkto_trk=id:421-UAM-182&token:_mch-tmsandbox.co.nz-1623580772341-69719; session=%7b3C80A558-FF0E-4884-9AB3-51CD37FE9878%7d; _dc_gtm_UA-10222729-3=1; _ga_8RZQCW6NQC=GS1.1.1623579971.1.1.1623581672.0; _ga=GA1.3.812867506.1623579971; _gali=LoginPageButton",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_email",
+							"value": "flux_test_015%40test.test",
+							"type": "text"
+						},
+						{
+							"key": "page_password",
+							"value": "2NCzRUb2zZj4tb47",
+							"type": "text"
+						},
+						{
+							"key": "login_attempts",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submitted",
+							"value": "Y",
+							"type": "text"
+						},
+						{
+							"key": "validationToken",
+							"value": "dcc8c480-cdc4-4bff-9db7-51f8328b69af",
+							"type": "text"
+						},
+						{
+							"key": "has_javascript",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.tmsandbox.co.nz/Members/SecureLogin.aspx",
+					"protocol": "https",
+					"host": [
+						"www",
+						"tmsandbox",
+						"co",
+						"nz"
+					],
+					"path": [
+						"Members",
+						"SecureLogin.aspx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
